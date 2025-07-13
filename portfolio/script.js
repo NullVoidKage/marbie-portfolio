@@ -28,4 +28,40 @@ navLinks.forEach(link => {
       }
     }
   });
+});
+
+// Mobile nav toggle
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.getElementById('main-nav');
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+    });
+  });
+}
+
+// Welcome button alert
+const welcomeBtn = document.querySelector('.welcome-btn');
+// Custom alert modal logic
+const customAlert = document.getElementById('customAlert');
+const customAlertClose = document.querySelector('.custom-alert-close');
+if (welcomeBtn && customAlert) {
+  welcomeBtn.addEventListener('click', () => {
+    customAlert.classList.add('active');
+  });
+}
+if (customAlertClose && customAlert) {
+  customAlertClose.addEventListener('click', () => {
+    customAlert.classList.remove('active');
+  });
+}
+// Optional: close on backdrop click
+customAlert.addEventListener('click', (e) => {
+  if (e.target === customAlert) {
+    customAlert.classList.remove('active');
+  }
 }); 

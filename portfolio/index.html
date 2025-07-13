@@ -9,8 +9,9 @@
 <body>
   <header>
     <div class="logo"><span class="accent">M</span>arbs.</div>
-    <nav>
-      <ul>
+    <button class="nav-toggle" aria-label="Open navigation menu">☰</button>
+    <nav id="main-nav">
+      <ul class="mobile-nav">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -19,9 +20,17 @@
       </ul>
     </nav>
   </header>
+  <div class="custom-alert" id="customAlert">
+    <div class="custom-alert-content">
+      <span class="custom-alert-message">Welcome to Marbs' Portfolio!</span>
+      <button class="custom-alert-close" aria-label="Close alert">×</button>
+    </div>
+  </div>
   <main>
     <section class="hero">
       <div class="hero-text">
+        <button class="welcome-btn">Welcome</button>
+
         <p class="role">UI/UX Designer</p>
         <h1>Hi, I'm <span class="accent">Marbs</span></h1>
         <h2>From Quezon City</h2>
@@ -67,6 +76,9 @@
       </form>
     </section>
   </main>
+  <footer class="site-footer">
+    <p>&copy; 2024 Marbs. All rights reserved. | Designed by Marbs</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html> 
