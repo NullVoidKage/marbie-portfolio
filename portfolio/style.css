@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 60px 0 60px;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.92);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.accent {
+  color: #ff3571;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ff3571;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  padding: 0 60px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.role {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.hero-image img {
+  width: 900px;
+  max-width: 100vw;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+  display: block;
+  margin-top: 40px;
+}
+
+.content-section {
+  max-width: 900px;
+  margin: 80px auto 0 auto;
+  padding: 48px 32px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+  /* Animation will be handled by keyframes */
+}
+
+.content-section.visible {
+  animation: fadeUp 0.9s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-section h2 {
+  font-size: 2.2rem;
+  color: #ff3571;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.services-list {
+  padding: 0;
+  list-style: none;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.services-list li {
+  margin-bottom: 12px;
+  padding-left: 0.5em;
+}
+
+.portfolio-items {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.portfolio-item {
+  background: #181818;
+  border-radius: 16px;
+  padding: 24px 20px;
+  flex: 1 1 260px;
+  min-width: 220px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  margin-bottom: 24px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.portfolio-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(255,53,113,0.15);
+}
+.portfolio-thumb {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #ff3571 30%, #181818 100%);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 18px;
+}
+.contact-form input,
+.contact-form textarea {
+  background: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  color: #fff;
+  font-size: 1rem;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #ff3571;
+}
+.contact-form button {
+  background: #ff3571;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form button:hover {
+  background: #ff5a8c;
+}
+
+@media (max-width: 900px) {
+  header, .hero {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+    min-height: 70vh;
+  }
+  .hero-image img {
+    width: 350px;
+    margin-top: 0;
+  }
+  .content-section {
+    margin: 48px 0 0 0;
+    padding: 32px 10px;
+  }
+  .portfolio-items {
+    flex-direction: column;
+    gap: 18px;
+  }
+} 
